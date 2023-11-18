@@ -16,8 +16,9 @@ final class BuildingListCell: UICollectionViewCell, Identifiable {
         $0.backgroundColor = UIColor.customColor.customSuperLightGray
     }
     
-    private let imageView = UIImageView().then {
-        $0.image = UIImage(named: "AnniversaryHall")
+    let imageView = UIImageView().then {
+        $0.image = UIImage(named: "")
+        $0.contentMode = .scaleAspectFit
     }
     
     private let buildingNameLabel = UILabel().then {

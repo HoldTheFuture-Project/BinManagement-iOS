@@ -10,6 +10,7 @@ import SnapKit
 import Then
 
 class SearchBuildingViewController: UIViewController {
+    var arrayBuilding : [BuildingModel] = []
     
     private lazy var header = SearchBuildingTabHeader(frame: .zero)
     
@@ -34,6 +35,9 @@ class SearchBuildingViewController: UIViewController {
         view.backgroundColor = .white
         config()
         configCollectionView()
+        
+        let input = BuildingAPIInput(id: nil)
+        BuildingDataManager().buildingDataManager(input, self)
     }
     
     private func config() {
@@ -89,10 +93,9 @@ class SearchBuildingViewController: UIViewController {
     }
 }
 
-
 extension SearchBuildingViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dummyData.count
+        return arrayBuilding.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -101,9 +104,21 @@ extension SearchBuildingViewController: UICollectionViewDataSource {
             for: indexPath
         ) as? BuildingListCell else { return UICollectionViewCell() }
 
-        let building = dummyData[indexPath.item]
-        cell.configure(with: building)
+        if let location = arrayBuilding[indexPath.row].location {
+            cell.buildingNameLabel.text = "\(location)"
+        } else {
+            cell.buildingNameLabel.text = "Location Not available"
+        }
 
         return cell
+    }
+}
+
+extension SearchBuildingViewController {
+    func successAPI(_ result: [BuildingModel]) {
+        arrayBuilding = result
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
 }

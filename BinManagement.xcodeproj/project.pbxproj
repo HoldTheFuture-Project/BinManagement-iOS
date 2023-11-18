@@ -75,7 +75,10 @@
 		2E8891EA2AFA6BC8007FF8EB /* BinStatusTabHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8891E92AFA6BC8007FF8EB /* BinStatusTabHeader.swift */; };
 		2E8891EC2AFA896A007FF8EB /* UILabel+lineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8891EB2AFA896A007FF8EB /* UILabel+lineSpacing.swift */; };
 		2E8AFB1C2AC80416009DF241 /* MapBuildingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8AFB1B2AC80416009DF241 /* MapBuildingInfoView.swift */; };
-		2EF40F6A2B089BF6000E70C9 /* MyPageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF40F692B089BF6000E70C9 /* MyPageListCell.swift */; };
+		2EF40F6D2B08B0FB000E70C9 /* BuildingAPIInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF40F6C2B08B0FB000E70C9 /* BuildingAPIInput.swift */; };
+		2EF40F712B08B180000E70C9 /* BuildingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF40F702B08B180000E70C9 /* BuildingDataManager.swift */; };
+		2EF40F732B08DAAD000E70C9 /* BuildingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF40F722B08DAAD000E70C9 /* BuildingModel.swift */; };
+		2EF40F782B091C05000E70C9 /* BuildingDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF40F772B091C05000E70C9 /* BuildingDataResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,7 +156,10 @@
 		2E8891E92AFA6BC8007FF8EB /* BinStatusTabHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinStatusTabHeader.swift; sourceTree = "<group>"; };
 		2E8891EB2AFA896A007FF8EB /* UILabel+lineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+lineSpacing.swift"; sourceTree = "<group>"; };
 		2E8AFB1B2AC80416009DF241 /* MapBuildingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBuildingInfoView.swift; sourceTree = "<group>"; };
-		2EF40F692B089BF6000E70C9 /* MyPageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageListCell.swift; sourceTree = "<group>"; };
+		2EF40F6C2B08B0FB000E70C9 /* BuildingAPIInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingAPIInput.swift; sourceTree = "<group>"; };
+		2EF40F702B08B180000E70C9 /* BuildingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingDataManager.swift; sourceTree = "<group>"; };
+		2EF40F722B08DAAD000E70C9 /* BuildingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingModel.swift; sourceTree = "<group>"; };
+		2EF40F772B091C05000E70C9 /* BuildingDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingDataResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -437,17 +443,8 @@
 			isa = PBXGroup;
 			children = (
 				2E57AF8F2B05E7540045234D /* ViewController */,
-				2E57AF8E2B05E74F0045234D /* View */,
 			);
 			path = MyPage;
-			sourceTree = "<group>";
-		};
-		2E57AF8E2B05E74F0045234D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				2EF40F692B089BF6000E70C9 /* MyPageListCell.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		2E57AF8F2B05E7540045234D /* ViewController */ = {
@@ -513,6 +510,10 @@
 		2EF40F6B2B08AF18000E70C9 /* BuildingDataManager */ = {
 			isa = PBXGroup;
 			children = (
+				2EF40F6C2B08B0FB000E70C9 /* BuildingAPIInput.swift */,
+				2EF40F702B08B180000E70C9 /* BuildingDataManager.swift */,
+				2EF40F722B08DAAD000E70C9 /* BuildingModel.swift */,
+				2EF40F772B091C05000E70C9 /* BuildingDataResponse.swift */,
 			);
 			path = BuildingDataManager;
 			sourceTree = "<group>";
@@ -630,6 +631,7 @@
 			files = (
 				2E8891EC2AFA896A007FF8EB /* UILabel+lineSpacing.swift in Sources */,
 				2E8891EA2AFA6BC8007FF8EB /* BinStatusTabHeader.swift in Sources */,
+				2EF40F782B091C05000E70C9 /* BuildingDataResponse.swift in Sources */,
 				2E3542082AC2F1CB0011B3B2 /* UIView+Shadow.swift in Sources */,
 				2E384C6B2B0789EB007838CF /* BuildingModel.swift in Sources */,
 				2E4980522ABF104200328F83 /* MapViewController.swift in Sources */,
@@ -642,7 +644,6 @@
 				2E3542062AC2F1B60011B3B2 /* UITextField+Attribute.swift in Sources */,
 				2E748E9E2AF2152F001993D6 /* BuildingDrawingsViewController.swift in Sources */,
 				2E51EA3F2AC304F100AD0122 /* MapTabHeader.swift in Sources */,
-				2EF40F6A2B089BF6000E70C9 /* MyPageListCell.swift in Sources */,
 				2E6868112B038BDF0028FA7F /* BinStatusCircularProgressView.swift in Sources */,
 				2E0D85902B04EB9C001E5CAF /* BuildingListCell.swift in Sources */,
 				2E0D858C2B04EB82001E5CAF /* SearchBuildingViewController.swift in Sources */,

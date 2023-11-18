@@ -34,6 +34,29 @@ class MyPageViewController: UIViewController {
         $0.text = "R9QL2E46 님의 담당 구역"
     }
     
+    private lazy var buildingImage = UIImageView().then {
+        $0.image = UIImage(named: "AnniversaryHall")
+        $0.contentMode = .scaleAspectFit
+    }
+    
+    private lazy var buildingnameLabel = UILabel().then {
+        $0.textColor = .black
+        $0.font = UIFont.systemFont(ofSize: 16)
+        $0.text = "인하대학교 60주년기념관"
+    }
+    
+    private lazy var borderView02 = UIView().then {
+        $0.backgroundColor = UIColor.customColor.customSuperLightGray
+    }
+    
+    private lazy var logoutBtn = UIButton().then {
+        $0.setTitle("로그아웃", for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        $0.setTitleColor(UIColor.lightGray, for: .normal)
+        $0.isEnabled = false
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +100,11 @@ class MyPageViewController: UIViewController {
             nicknameLabel,
             editInfoBtn,
             borderView,
-            cleaningAreaLabel
+            cleaningAreaLabel,
+            buildingImage,
+            buildingnameLabel,
+            borderView02,
+            logoutBtn
         ])
         
         imageView.snp.makeConstraints {
@@ -107,6 +134,33 @@ class MyPageViewController: UIViewController {
         cleaningAreaLabel.snp.makeConstraints {
             $0.top.equalTo(borderView.snp.bottom).offset(30)
             $0.leading.equalToSuperview().offset(20)
+        }
+        
+//        buildingImage,
+//        buildingnameLabel,
+//        borderView02,
+//        logoutBtn
+        
+        buildingImage.snp.makeConstraints {
+            $0.height.equalTo(210)
+            $0.top.equalTo(cleaningAreaLabel.snp.bottom).offset(25)
+            $0.leading.trailing.equalToSuperview().inset(20)
+        }
+        
+        buildingnameLabel.snp.makeConstraints {
+            $0.top.equalTo(buildingImage.snp.bottom).offset(10)
+            $0.leading.equalTo(buildingImage)
+        }
+        
+        borderView02.snp.makeConstraints {
+            $0.height.equalTo(10)
+            $0.top.equalTo(buildingnameLabel.snp.bottom).offset(25)
+            $0.leading.trailing.equalToSuperview()
+        }
+        
+        logoutBtn.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(borderView02.snp.bottom).offset(50)
         }
         
     }
